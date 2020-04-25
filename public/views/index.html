@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <script type='text/javascript' src='../config.js'></script>
     <script src="../scripts/app.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    
     <title>Hospital@Home</title>
 </head>
 <body>
     <div class="dashboard">
-        
-        <div class="dashboard-nav">
-            <div class="nav">
-                Dashboard <br>
-                Patient View <br>
-                Call Emergency <br>
-            </div>
-
-
+        <div class="dashboard-nav"></div>
+        <div class="nav">
+            Dashboard <br>
+            Patient View <br>
+            Call Emergency <br>
         </div>
-        <div class="cases-container">
-            <div class="cases-map">map</div>
-            <div class="cases-graph">graph</div>
+        <div class="cases-container"></div>
+        <div class="cases-map">
+            <div id="map"></div>
         </div>
-        <div class="big-table">
-
-        </div>
+        <div class="cases-graph"></div>
+        <div class="big-table">${config.MY_KEY}</div>
     </div>
+
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+    </script>
 </body>
 </html>

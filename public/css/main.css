@@ -64,16 +64,21 @@ body{
     position: absolute;
     width: 425.86px;
     height: 326.19px;
-    left: 310px;
+    left: 320px;
     top: 48px;
-    background-color: darkred;
+    background-color: bisque;
 }
 
 .cases-graph{
     position: absolute;
-    width:100px;
-    height: 100px;
-    right: 10px;
+    width: 425.86px;
+    height: 326.19px;
+    left: 834px;
     top: 48px;
-    background-color: deeppink;
+    background-color: black;
+}
+
+#map {
+    width: 425.86px;
+    height: 326.19px;
 }

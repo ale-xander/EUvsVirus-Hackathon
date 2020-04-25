@@ -1,3 +1,79 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
+:root {
+    /* colors  */
+    --navigation-blue: #E4F5FF;
+    --orange: #EA5311;
+    --dark-bluelogo: #03256C;
+    --primary-blue: #1C71F2;
+    --popup-background: #1982C4;
+    --primary-button-normal: #549F93;
+    --link-color: #1C71F2;
+    --Gray-6: #F6F6F6;
+
+}
 body{
-    color: red;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.dashboard {
+    width: 1440px;
+    height: 1231px;
+    background: var(--navigation-blue);
+}
+
+.dashboard-nav {
+    position: absolute;
+    width: 191px;
+    height: 932px;
+    left: 29px;
+    top: 0px;
+    background-color: blueviolet;
+}
+.nav {
+    position: absolute;
+    width: 176.8px;
+    height: 109px;
+    left: 42px;
+    top: 520px;
+    background-color: cornflowerblue;
+}
+.big-table {
+    position: absolute;
+    width: 1140px;
+    height: 742px;
+    left: 235px;
+    top: 450px;
+    background-color: cyan;
+}
+
+.cases-container {
+    position: absolute;
+    width: 939px;
+    height: 362.67px;
+    left: 321px;
+    top: 48px;
+    background-color: darkorange;
+}
+
+.cases-map {
+    position: absolute;
+    width: 425.86px;
+    height: 326.19px;
+    left: 310px;
+    top: 48px;
+    background-color: darkred;
+}
+
+.cases-graph{
+    position: absolute;
+    width:100px;
+    height: 100px;
+    right: 10px;
+    top: 48px;
+    background-color: deeppink;
 }

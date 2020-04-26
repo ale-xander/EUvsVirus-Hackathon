@@ -82,3 +82,11 @@ body{
     width: 425.86px;
     height: 326.19px;
 }
+
+li{
+   list-style-type: none;
+}
+
+span{
+    padding-left: 15px;
+    }

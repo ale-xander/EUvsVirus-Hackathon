@@ -1,17 +1,65 @@
 console.log('testing')
 
 // -------- Maps --------
-function initMap () {
-  // The location of Uluru
-  var SJC = { lat: 37.3353, lng: -121.8919 }
-  // The map, centered at Uluru
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: SJC
-  })
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({ position: SJC, map: map })
+
+var map;
+function initMap() {
+  map = new google.maps.Map(
+      document.getElementById('map'),
+      {center: new google.maps.LatLng(37.368917, -121.941457), zoom: 10});
+
+
+  var features = [
+    {
+      position: new google.maps.LatLng(37.362840, -121.949102),
+      // type: 'info'
+    }, {
+      position: new google.maps.LatLng(37.338162, -121.968841),
+      // type: 'info'
+    }, {
+      position: new google.maps.LatLng(37.387244, -121.981709),
+      // type: 'info'
+    }, {
+      position: new google.maps.LatLng(37.332190, -121.897427),
+      type: 'info'
+    }, {
+      position: new google.maps.LatLng(37.403268, -121.870475),
+      // type: 'info'
+    }, {
+      position: new google.maps.LatLng(37.444022, -121.939624),
+      // type: 'info'
+    }, {
+      position: new google.maps.LatLng(37.359853, -122.088024),
+      // type: 'info'
+    }, {
+      position: new google.maps.LatLng(37.312627, -122.012996),
+      // type: 'info'
+    }, 
+    {
+      position: new google.maps.LatLng(37.362941, -122.034480),
+      // type: 'info'
+    }, 
+    {
+      position: new google.maps.LatLng(37.282059, -121.873076),
+      // type: 'info'
+    }, 
+    {
+      position: new google.maps.LatLng(37.742423, -122.437720),
+      // type: 'info'
+    }, 
+  ];
+
+  // Create markers.
+  for (var i = 0; i < features.length; i++) {
+    var marker = new google.maps.Marker({
+      position: features[i].position,
+      // icon: icons[features[i].type].icon,
+      map: map
+    });
+  };
 }
+
+
 
 // -------- Firebase --------
 db.collection('patients').get().then((snapshot) =>{

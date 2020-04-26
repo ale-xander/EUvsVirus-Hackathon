@@ -1,6 +1,4 @@
 console.log('testing')
-// var mykey = config.MY_KEY;
-
 
 // -------- Maps --------
 function initMap () {
@@ -38,7 +36,7 @@ function renderPatients(doc){
   let risk = document.createElement('span');
   let status = document.createElement('span');
 
-  li.setAttribute('patients', doc.id);
+  li.setAttribute('patients-id', doc.id);
   // console.log(doc.id)
   patient_id.textContent = doc.data().patient_id;
   age.textContent = doc.data().age;
@@ -61,3 +59,68 @@ function renderPatients(doc){
 
   patientList.appendChild(li);
 }
+
+
+// -------- Highcharts -------- 
+Highcharts.chart('container', {
+  chart: {
+    type: 'area'
+  },
+  title: {
+    text: 'COVID-19 PATIENTS'
+  },
+  subtitle: {
+    text: ''
+  },
+  xAxis: {
+    categories: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL'],
+    tickmarkPlacement: 'on',
+    title: {
+      enabled: false
+    }
+  },
+  credits:{
+    enabled: false
+  },  
+  exporting: {
+    enabled: true
+  },
+  yAxis: {
+    title: {
+      text: 'Patients (thousands)'
+    },
+    labels: {
+      formatter: function () {
+        return this.value / 1000;
+      }
+    }
+  },
+  tooltip: {
+    split: true,
+    valueSuffix: ' millions'
+  },
+  plotOptions: {
+    area: {
+      stacking: 'normal',
+      lineColor: '#666666',
+      lineWidth: 1,
+      marker: {
+        lineWidth: 1,
+        lineColor: '#666666'
+      }
+    }
+  },
+  series: [{
+    name: 'North America',
+    data: [502, 635, 809, 947, 1402, 3634, 5268]
+  }, {
+    name: 'Africa',
+    data: [106, 107, 111, 133, 221, 767, 1766]
+  }, {
+    name: 'Europe',
+    data: [163, 203, 276, 408, 547, 729, 628]
+  }, {
+    name: 'Asia',
+    data: [18, 31, 54, 156, 339, 818, 1201]
+  }]
+});
